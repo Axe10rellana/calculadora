@@ -1,0 +1,191 @@
+/* CUSTOM PROPERTIES */
+:root {
+  --white-color: #cfd8dc;
+  --container-color: #333;
+  --button-hover: #222;
+  --font: "Roboto", sans-serif;
+  --color2: #80c9dd;
+  --color3: #d5eaf0;
+  --color1: #62bbd3;
+}
+
+/* RESET */
+html {
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--button-hover);
+  background-color: var(--color1);
+  background-image: linear-gradient(
+      30deg,
+      var(--color2) 12%,
+      transparent 12.5%,
+      transparent 87%,
+      var(--color2) 87.5%,
+      var(--color2)
+    ),
+    linear-gradient(
+      150deg,
+      var(--color2) 12%,
+      transparent 12.5%,
+      transparent 87%,
+      var(--color2) 87.5%,
+      var(--color2)
+    ),
+    linear-gradient(
+      30deg,
+      var(--color2) 12%,
+      transparent 12.5%,
+      transparent 87%,
+      var(--color2) 87.5%,
+      var(--color2)
+    ),
+    linear-gradient(
+      150deg,
+      var(--color2) 12%,
+      transparent 12.5%,
+      transparent 87%,
+      var(--color2) 87.5%,
+      var(--color2)
+    ),
+    linear-gradient(
+      60deg,
+      var(--color3) 25%,
+      transparent 25.5%,
+      transparent 75%,
+      var(--color3) 75%,
+      var(--color3)
+    ),
+    linear-gradient(
+      60deg,
+      var(--color3) 25%,
+      transparent 25.5%,
+      transparent 75%,
+      var(--color3) 75%,
+      var(--color3)
+    );
+  background-size: 40px 70px;
+  background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+h5 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+h6 {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+[id] {
+  scroll-margin-top: 2ex;
+}
+
+/*---------------------------------------------------------------------*/
+/* estilos de la pagina */
+section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 95%;
+  max-width: 500px;
+  background-color: var(--container-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.display {
+  background-color: var(--white-color);
+  height: 100px;
+  width: 100%;
+  text-align: right;
+  padding: 20px;
+  font-size: 1.875rem;
+  position: relative;
+}
+
+.display-1 {
+  opacity: 0.4;
+  font-size: 1.25rem;
+  height: 20px;
+  overflow: hidden;
+}
+
+.temp-result {
+  position: absolute;
+  bottom: 0;
+  left: 10;
+  font-size: 1.25rem;
+  opacity: 0.3;
+}
+
+.all-buttons {
+  color: var(--white-color);
+  display: grid;
+  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+}
+
+.button {
+  border: 0.5px solid #555;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.875rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--button-hover);
+}
+
+.btn-0 {
+  grid-column: 1/3;
+}
