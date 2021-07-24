@@ -38,7 +38,6 @@ operationEl.forEach((operation) => {
 
     clearVar(operationName);
     lastOperation = operationName;
-    console.log(result);
   });
 });
 
