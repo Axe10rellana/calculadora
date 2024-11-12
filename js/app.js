@@ -12,8 +12,8 @@ let result = null;
 let lastOperation = "";
 let haveDot = false;
 
-numbersEl.forEach((number) => {
-  number.addEventListener("click", (e) => {
+numbersEl.forEach(number => {
+  number.addEventListener("click", e => {
     if (e.target.innerText === "." && !haveDot) {
       haveDot = true;
     } else if (e.target.innerText === "." && haveDot) {
@@ -25,8 +25,8 @@ numbersEl.forEach((number) => {
   });
 });
 
-operationEl.forEach((operation) => {
-  operation.addEventListener("click", (e) => {
+operationEl.forEach(operation => {
+  operation.addEventListener("click", e => {
     if (!dis2Num) result;
     haveDot = false;
     const operationName = e.target.innerText;
@@ -41,15 +41,15 @@ operationEl.forEach((operation) => {
   });
 });
 
-function clearVar(name = "") {
+const clearVar = (name = "") => {
   dis1Num += dis2Num + " " + name + " ";
   display1El.innerText = dis1Num;
   display2El.innerText = "";
   dis2Num = "";
   tempResultEl.innerText = result;
-}
+};
 
-function mathOperation() {
+const mathOperation = () => {
   if (lastOperation === "X") {
     result = parseFloat(result) * parseFloat(dis2Num);
   } else if (lastOperation === "+") {
@@ -57,16 +57,13 @@ function mathOperation() {
   } else if (lastOperation === "-") {
     result = parseFloat(result) - parseFloat(dis2Num);
   } else if (lastOperation === "/") {
-    result =
-      parseFloat(dis2Num) === 0
-        ? "No se puede dividir por 0"
-        : parseFloat(result) / parseFloat(dis2Num);
+    result = parseFloat(dis2Num) === 0 ? "No se puede dividir por 0" : parseFloat(result) / parseFloat(dis2Num);
   } else if (lastOperation === "%") {
     result = parseFloat(result) % parseFloat(dis2Num);
   }
-}
+};
 
-equalEl.addEventListener("click", (e) => {
+equalEl.addEventListener("click", e => {
   if (!dis1Num || !dis2Num) return;
   haveDot = false;
   mathOperation();
@@ -77,7 +74,7 @@ equalEl.addEventListener("click", (e) => {
   dis1Num = "";
 });
 
-clearAllEl.addEventListener("click", (e) => {
+clearAllEl.addEventListener("click", e => {
   display1El.innerText = "0";
   display2El.innerText = "0";
   tempResultEl.innerText = "0";
@@ -86,51 +83,39 @@ clearAllEl.addEventListener("click", (e) => {
   result = "";
 });
 
-clearLastEl.addEventListener("click", (e) => {
+clearLastEl.addEventListener("click", e => {
   display2El.innerText = "0";
   dis2Num = "";
 });
 
-window.addEventListener("keydown", (e) => {
-  if (
-    e.key === "0" ||
-    e.key === "1" ||
-    e.key === "2" ||
-    e.key === "3" ||
-    e.key === "4" ||
-    e.key === "5" ||
-    e.key === "6" ||
-    e.key === "7" ||
-    e.key === "8" ||
-    e.key === "9" ||
-    e.key === "."
-  ) {
+window.addEventListener("keydown", e => {
+  if (["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."].includes(e.key)) {
     clickButtonEl(e.key);
-  } else if (e.key === "+" || e.key === "-" || e.key === "/" || e.key === "%") {
+  } else if (["+","-", "/", "%"].includes(e.key)) {
     clickOperation(e.key);
   } else if (e.key === "*") {
     clickOperation("X");
-  } else if (e.key == "Enter" || e.key === "=") {
+  } else if (e.key === "Enter" || e.key === "=") {
     clickEqual();
   }
 });
 
-function clickButtonEl(key) {
-  numbersEl.forEach((button) => {
+const clickButtonEl = key => {
+  numbersEl.forEach(button => {
     if (button.innerText === key) {
       button.click();
     }
   });
-}
+};
 
-function clickOperation(key) {
-  operationEl.forEach((operation) => {
+const clickOperation = key => {
+  operationEl.forEach(operation => {
     if (operation.innerText === key) {
       operation.click();
     }
   });
-}
+};
 
-function clickEqual() {
+const clickEqual = () => {
   equalEl.click();
-}
+};

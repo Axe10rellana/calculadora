@@ -8,11 +8,11 @@ Código de la aplicación calculadora hecha en html, css y javascript.
 
 ## Vista En Versión Desktop
 
-![Vista_En_Versión_Desktop](./assets/desktop-preview.jpg)
+![Vista_En_Versión_Desktop](./assets/design/desktop-design.jpg)
 
 ## Vista En Versión Mobile
 
-![Vista_En_Versión_Mobile](./assets/mobile-design.jpg)
+![Vista_En_Versión_Mobile](./assets/design/mobile-design.jpg)
 
 ---
 
